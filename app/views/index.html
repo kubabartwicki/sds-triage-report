@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Export triage report
+{% endblock %}
+
+{% block content %}
+
+<style>
+@media print {
+  header, footer {
+    display: none;
+  }
+}
+</style>
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+
+<h3 class="govuk-heading-xl">Export triage report</h3>
+
+<p class="govuk-body">
+  This tool takes data from Zendesk and exports it to HTML. The purpose of this is to create a triage report from a Service Design Support case, so we can show to our stakeholders how our support looked like.
+</p>
+<p class="govuk-body">
+  To use, go to <code>/ticket/{ID}</code>, swapping <code>{ID}</code> with the ID of your ticket.
+</p>
+<p class="govuk-body">
+  It currently uses the GOV.UK Sandbox. You can edit this and add a token in <code>routes.js</code>.
+</p>
+
+
+</div>
+</div>
+
+{% endblock %}

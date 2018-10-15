@@ -1,0 +1,293 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ orgNumber }}: {{ findCustomField(360000197620) }}
+{% endblock %}
+
+{% block content %}
+
+<style>
+@media print {
+  header, footer {
+    display: none;
+  }
+}
+</style>
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+
+ <h3 class="govuk-caption-xl">Triage report</h3>
+    <h2 class="govuk-heading-xl">{{ ticketData.organization_id }}: {{ findCustomField(360000197620) }}</h2>
+    <p class="govuk-body">Triage report summarises all our engagement with a service team from the first point of contact until the end of engagement. Refer to <a href="https://drive.google.com/a/digital.cabinet-office.gov.uk/open?id=1cKa5kWcpW-50e0IQaM98S8jIm4zaWBKL20stsZTDUZA">data we use to provide support</a> and <a href="https://drive.google.com/a/digital.cabinet-office.gov.uk/open?id=1OLBkVLjLfs3EphYOjyuaiWTOf0bAXbIdi6suSr3lxqk">triage criteria definitions</a> when filling this in.</p>
+
+    <br/>
+    <h3 class="govuk-heading-l govuk-!-padding-top-5">Engagement</h3>
+    <table class="govuk-table">
+      <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+      <td class="govuk-table__header" colspan="1" rowspan="1">
+      Referral
+      </td>
+      <td class="govuk-table__cell" colspan="1" rowspan="1">
+      </td>
+      </tr>
+      <tr class="govuk-table__row">
+      <td class="govuk-table__header" colspan="1" rowspan="1">
+      Call
+      </td>
+      <td class="govuk-table__cell" colspan="1" rowspan="1">
+      </td>
+      </tr>
+      <tr class="govuk-table__row">
+      <td class="govuk-table__header" colspan="1" rowspan="1">
+      Workshop
+      </td>
+      <td class="govuk-table__cell" colspan="1" rowspan="1">
+      </td>
+      </tr>
+      <tr class="govuk-table__row">
+      <td class="govuk-table__header" colspan="1" rowspan="1">
+      Ticket
+      </td>
+      <td class="govuk-table__cell" colspan="1" rowspan="1">
+      </td>
+      </tr>
+      </tbody>
+    </table>
+    <br/>
+    <h3 class="govuk-heading-l govuk-!-padding-top-5">Eligibility</h3>
+    <p class="govuk-body">Completed 22.08.2018<br/>
+    Outcome: <strong style="color:#b10e1e">Support / Not supporting / Referred to X</strong></p>
+    <br/>
+    <table class="govuk-table">
+      <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+      <td class="govuk-table__header" colspan="1" rowspan="1">
+      Department
+      </td>
+      <td class="govuk-table__cell" colspan="1" rowspan="1">
+      {{ ticketData.organization_id }}
+      </td>
+      </tr>
+      <tr class="govuk-table__row">
+      <td class="govuk-table__header" colspan="1" rowspan="1">
+      Transaction
+      </td>
+      <td class="govuk-table__cell" colspan="1" rowspan="1">
+      {{ findCustomField(360000191759) }}
+      </td>
+      </tr>
+      <tr class="govuk-table__row">
+      <td class="govuk-table__header" colspan="1" rowspan="1">
+      End-to-end service
+      </td>
+      <td class="govuk-table__cell" colspan="1" rowspan="1">
+      {{ findCustomField(360000197620) }}
+      </td>
+      </tr>
+      <tr class="govuk-table__row">
+      <td class="govuk-table__header" colspan="1" rowspan="1">
+      Service area
+      </td>
+      <td class="govuk-table__cell" colspan="1" rowspan="1">
+      {{ findCustomField(360000198959) }}
+      </td>
+      </tr>
+      <tr class="govuk-table__row">
+      <td class="govuk-table__header" colspan="1" rowspan="1">
+      Lifecycle
+      </td>
+      <td class="govuk-table__cell" colspan="1" rowspan="1">
+      {{ findCustomField(360000205640) | capitalize }}
+      </td>
+      </tr>
+      <tr class="govuk-table__row">
+      <td class="govuk-table__header" colspan="1" rowspan="1">
+
+      Capability in team
+      </td>
+      <td class="govuk-table__cell" colspan="1" rowspan="1">
+        {% if findCustomField(360000206540) == 'team-capability-high' %}
+          High
+        {% elseif findCustomField(360000206540) == 'team-capability-med' %}
+          Medium
+        {% elseif findCustomField(360000206540) == 'team-capability-low' %}
+          Low
+        {% endif %}
+      </td>
+      </tr>
+      <tr class="govuk-table__row">
+      <td class="govuk-table__header" colspan="1" rowspan="1">
+      Capability in organisation
+      </td>
+      <td class="govuk-table__cell" colspan="1" rowspan="1">
+      </td>
+      </tr>
+      <tr class="govuk-table__row">
+      <td class="govuk-table__header" colspan="1" rowspan="1">
+      Referrer
+      </td>
+      <td class="govuk-table__cell" colspan="1" rowspan="1">
+      {{ findCustomField(360000191799) }}
+      </td>
+      </tr>
+      <tr class="govuk-table__row">
+      <td class="govuk-table__header" colspan="1" rowspan="1">
+      Other routes
+      </td>
+      <td class="govuk-table__cell" colspan="1" rowspan="1">
+      {{ findCustomField(360000198979) }}
+      </td>
+      </tr>
+      <tr class="govuk-table__row">
+      <td class="govuk-table__header" colspan="1" rowspan="1">
+      Google drive folder
+      </td>
+      <td class="govuk-table__cell" colspan="1" rowspan="1">
+      {{ findCustomField(360000199019) }}
+      </td>
+      </tr>
+      </tbody>
+    </table>
+    <br/>
+    <h3 class="govuk-heading-l govuk-!-padding-top-5">Prioritisation</h3>
+    <p class="govuk-body">Priority: <strong  style="color:#b10e1e">{{ ticketData.priority | capitalize }}</strong></p>
+    <br/>
+    <table class="govuk-table">
+      <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+      <td class="govuk-table__header" colspan="1" rowspan="1">
+      Value to users
+      </td>
+      <td class="govuk-table__cell" colspan="1" rowspan="1">
+        {% if findCustomField(360000207379) == 'users-high' %}
+          High
+        {% elseif findCustomField(360000207379) == 'users-medium' %}
+          Medium
+        {% elseif findCustomField(360000207379) == 'team-low' %}
+          Low
+        {% endif %}
+      </td>
+      </tr>
+      <tr class="govuk-table__row">
+      <td class="govuk-table__header" colspan="1" rowspan="1">
+      Value to government
+      </td>
+      <td class="govuk-table__cell" colspan="1" rowspan="1">
+        {% if findCustomField(360000207399) == 'gov-high' %}
+          High
+        {% elseif findCustomField(360000207399) == 'gov-medium' %}
+          Medium
+        {% elseif findCustomField(360000207399) == 'gov-low' %}
+          Low
+        {% endif %}
+      </td>
+      </tr>
+      <tr class="govuk-table__row">
+      <td class="govuk-table__header" colspan="1" rowspan="1">
+      Impact of support
+      </td>
+      <td class="govuk-table__cell" colspan="1" rowspan="1">
+        {% if findCustomField(360000208479) == 'impact-high' %}
+          High
+        {% elseif findCustomField(360000208479) == 'impact-med' %}
+          Medium
+        {% elseif findCustomField(360000208479) == 'impact-low' %}
+          Low
+        {% endif %}
+      </td>
+      </tr>
+      <tr class="govuk-table__row">
+      <td class="govuk-table__header" colspan="1" rowspan="1">
+      Background knowledge from GDS
+      </td>
+      <td class="govuk-table__cell" colspan="1" rowspan="1">
+      {{ findCustomField(360000203800) }}
+      </td>
+      </tr>
+      <tr class="govuk-table__row">
+      <td class="govuk-table__header" colspan="1" rowspan="1">
+      Expected outcomes
+      </td>
+      <td class="govuk-table__cell" colspan="1" rowspan="1">
+      {{ findCustomField(360000205959) }}
+      </td>
+      </tr>
+      </tbody>
+    </table>
+    <br/>
+    <h3 class="govuk-heading-l govuk-!-padding-top-5">EU Exit impact</h3>
+    <table class="govuk-table">
+      <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+      <td class="govuk-table__header" colspan="1" rowspan="1">
+      ProgID (FST, EU Exit)
+      </td>
+      <td class="govuk-table__cell" colspan="1" rowspan="1">
+      {{ findCustomField(360000197780) }}
+      </td>
+      </tr>
+      <tr class="govuk-table__row">
+      <td class="govuk-table__header" colspan="1" rowspan="1">
+      IssueNo (DExEU, EU Exit)
+      </td>
+      <td class="govuk-table__cell" colspan="1" rowspan="1">
+      {{ findCustomField(360000197800) }}
+      </td>
+      </tr>
+      <tr class="govuk-table__row">
+      <td class="govuk-table__header" colspan="1" rowspan="1">
+      DeptID
+      </td>
+      <td class="govuk-table__cell" colspan="1" rowspan="1">
+      {{ ticketData.organization_id }}
+      </td>
+      </tr>
+      </tbody>
+    </table>
+
+    <h3 class="govuk-heading-l govuk-!-padding-top-5 govuk-!-margin-bottom-4">Deep dive</h3>
+    <h4 class="govuk-heading-m">Title of workshop</h4>
+    <p class="govuk-body">Summarise the workshop.</p>
+
+    <h3 class="govuk-heading-l govuk-!-padding-top-5 govuk-!-margin-bottom-4">Support offer</h3>
+    <h4 class="govuk-heading-m">Title of offer</h4>
+    <p class="govuk-body">22.04.2018</p>
+    <p class="govuk-body">Summarise the support offered.</p>
+    <br/>
+    <h3 class="govuk-heading-l govuk-!-padding-top-5 govuk-!-margin-bottom-3">Contacts</h3>
+    <br/>
+    <h4 class="govuk-heading-m govuk-!-margin-bottom-2">bla {# findOrganisationName( ticketData.organization_id ) #}</h4>
+    <table class="govuk-table">
+      <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+      <td class="govuk-table__cell" colspan="1" rowspan="1">
+      Name
+      </td>
+      <td class="govuk-table__cell" colspan="1" rowspan="1">
+      Title
+      </td>
+      </tr>
+      </tbody>
+    </table>
+    <br/>
+    <h4 class="govuk-heading-m govuk-!-margin-bottom-2">Cabinet Office</h4>
+    <table class="govuk-table">
+      <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+      <td class="govuk-table__cell" colspan="1" rowspan="1">
+      Name
+      </td>
+      <td class="govuk-table__cell" colspan="1" rowspan="1">
+      Title
+      </td>
+      </tr>
+      </tbody>
+    </table>
+
+
+</div>
+</div>
+
+{% endblock %}
