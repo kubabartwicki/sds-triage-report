@@ -9,7 +9,7 @@ var ticketData;
 // Authenticate with Zendesk
 var zendesk = new Zendesk({
   email: 'kuba.bartwicki@digital.cabinet-office.gov.uk',
-  token: 'QiE4tWEpY2BCR8sDmry8soDjNyvBKHgJfGYBHS0v',
+  token: '', // ADD YOUR OWN
   url: 'https://govuk1524574066.zendesk.com/'
 });
 
